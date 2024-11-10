@@ -3,6 +3,7 @@
 
 #include "CollisionDetect.h"
 #include "C:/Program Files/Epic Games/UE_5.4/Engine/Plugins/ChaosClothAsset/Source/ChaosClothAsset/Public/ChaosClothAsset/ClothGeometryTools.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 // Sets default values
 ACollisionDetect::ACollisionDetect()
@@ -16,6 +17,8 @@ ACollisionDetect::ACollisionDetect()
 void ACollisionDetect::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UKismetSystemLibrary::PrintString(this, "C++ Hello World! Warm Welcome!", true, true, FColor::Cyan, 2.f, TEXT("None"));
 	
 }
 
