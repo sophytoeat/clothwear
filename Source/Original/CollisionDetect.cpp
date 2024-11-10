@@ -2,6 +2,7 @@
 
 
 #include "CollisionDetect.h"
+#include "C:/Program Files/Epic Games/UE_5.4/Engine/Plugins/ChaosClothAsset/Source/ChaosClothAsset/Public/ChaosClothAsset/ClothGeometryTools.h"
 
 // Sets default values
 ACollisionDetect::ACollisionDetect()
