@@ -4,6 +4,8 @@
 #include "CollisionDetect.h"
 #include "C:/Program Files/Epic Games/UE_5.4/Engine/Plugins/ChaosClothAsset/Source/ChaosClothAsset/Public/ChaosClothAsset/ClothGeometryTools.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "C:/Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Experimental/Chaos/Public/GeometryCollection/ManagedArrayCollection.h"
+#include "C:/Program Files/Epic Games/UE_5.4/Engine/Plugins/ChaosClothAsset/Source/ChaosClothAsset/Public/ChaosClothAsset/CollectionClothFacade.h"
 
 // Sets default values
 ACollisionDetect::ACollisionDetect()
@@ -27,5 +29,11 @@ void ACollisionDetect::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+TSharedPtr<FManagedArrayCollection> ACollisionDetect::GetClothCollection()
+{
+	TSharedPtr<FManagedArrayCollection> Collection = MakeShared<FManagedArrayCollection>();
+	return Collection;
 }
 

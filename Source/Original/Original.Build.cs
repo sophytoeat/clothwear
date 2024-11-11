@@ -8,7 +8,7 @@ public class Original : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "ChaosClothAsset" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "ChaosClothAsset", "Engine", "GeometryCollectionEngine", "ChaosCloth", "Chaos" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
