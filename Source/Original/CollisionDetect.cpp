@@ -19,8 +19,6 @@ ACollisionDetect::ACollisionDetect()
 void ACollisionDetect::BeginPlay()
 {
 	Super::BeginPlay();
-
-	UKismetSystemLibrary::PrintString(this, "C++ Hello World! Warm Welcome!", true, true, FColor::Cyan, 2.f, TEXT("None"));
 	
 }
 
@@ -29,11 +27,16 @@ void ACollisionDetect::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// IslandData の Positions3D にデータを追加 (例)
+	IslandData.Positions3D.Add(FVector3f(10.0f, 20.0f, 30.0f));
+
+	// Positions3D の内容を使用してメッセージを出力
+	for (const FVector3f& Position : IslandData.GetPositions3D())
+	{
+		FString PositionString = FString::Printf(TEXT("Position: (%f, %f, %f)"), Position.X, Position.Y, Position.Z);
+		UKismetSystemLibrary::PrintString(this, PositionString, true, true, FColor::Green, 2.f, TEXT("None"));
+	}
+
 }
 
-TSharedPtr<FManagedArrayCollection> ACollisionDetect::GetClothCollection()
-{
-	TSharedPtr<FManagedArrayCollection> Collection = MakeShared<FManagedArrayCollection>();
-	return Collection;
-}
 
